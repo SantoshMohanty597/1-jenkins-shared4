@@ -1,0 +1,25 @@
+@Library('my-shared-lib') _
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                buildApp()
+            }
+        }
+
+        stage('Docker') {
+            steps {
+                dockerBuild("myapp:1.0")
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                deployApp("prod")
+            }
+        }
+    }
+}
