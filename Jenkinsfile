@@ -6,6 +6,7 @@ pipeline {
         stage('Test Shared Lib') {
             steps {
                 hello()
+                echo "This is the test for shared library"
             }
         }
     }
