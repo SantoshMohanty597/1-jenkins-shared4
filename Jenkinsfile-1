@@ -11,12 +11,12 @@ pipeline {
             }
         }
 
-        stage('Docker') {
-            steps {
-                dockerBuild("myapp:1.0")
-                echo "Docker image built successfull"
-            }
-        }
+        // stage('Docker') {
+        //     steps {
+        //         dockerBuild("myapp:1.0")
+        //         echo "Docker image built successfull"
+        //     }
+        // }
 
         stage('Deploy') {
             steps {
